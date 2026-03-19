@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Email Fraud Detection System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"></div>
+
+  <!-- Page 1: Home -->
+  <div id="home-page" class="page active">
+    <div class="page-container">
+      <!-- Animated Background Gradients -->
+      <div class="bg-gradients">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+        <div class="bg-blob blob-4"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="content-wrapper">
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <div class="hero-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Advanced Email Security with OCR</span>
+          </div>
+          
+          <h1 class="hero-title">
+            AI-Powered Email<br>
+            <span class="gradient-text">Fraud Detection</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Upload a screenshot of any email and instantly detect phishing risks with our intelligent OCR-powered analysis system.
+          </p>
+          
+          <button class="primary-btn" onclick="navigateTo('upload')">
+            <span class="btn-content">
+              Start Scanning
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon icon-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-title">OCR Screenshot Analysis</h3>
+            <p class="feature-desc">
+              Upload any email screenshot and our advanced OCR technology instantly extracts and analyzes the text content for potential threats.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon icon-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Intelligent Risk Scoring</h3>
+            <p class="feature-desc">
+              Get precise risk percentages powered by AI that analyzes patterns, keywords, and phishing indicators in real-time.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon icon-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-title">Instant Security Feedback</h3>
+            <p class="feature-desc">
+              Receive immediate, actionable insights with color-coded risk levels and detailed explanations of detected threats.
+            </p>
+          </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="info-section">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h2 class="info-title">How It Works</h2>
+          <p class="info-desc">
+            Simply upload a screenshot of any suspicious email. Our advanced OCR technology extracts the text, 
+            and our AI-powered fraud detection system analyzes it for phishing patterns, malicious links, 
+            and suspicious keywords. Within seconds, you'll receive a comprehensive risk assessment with 
+            actionable security recommendations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2: Upload -->
+  <div id="upload-page" class="page">
+    <div class="page-container">
+      <!-- Animated Background Gradients -->
+      <div class="bg-gradients">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="content-wrapper upload-content">
+        <!-- Header -->
+        <div class="page-header">
+          <button class="back-btn" onclick="navigateTo('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </button>
+
+          <div class="page-title-section">
+            <div class="page-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h1 class="page-title">Upload Email Screenshot</h1>
+          </div>
+          <p class="page-subtitle">Upload a screenshot of any suspicious email for instant fraud detection analysis.</p>
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-card glass-card">
+          <!-- Upload Area (Initial State) -->
+          <div id="upload-area" class="upload-area">
+            <div class="upload-icon-wrapper">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="upload-title">Drag & drop or click to upload</h3>
+            <p class="upload-subtitle">Supported formats: JPG, PNG</p>
+            <input type="file" id="file-input" accept="image/png,image/jpeg" hidden>
+          </div>
+
+          <!-- Preview Area -->
+          <div id="preview-area" class="preview-area" style="display: none;">
+            <div class="preview-image-wrapper">
+              <img id="preview-image" src="" alt="Preview">
+            </div>
+            <div class="file-info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span id="file-name"></span>
+              <button class="remove-btn" onclick="removeFile()">Remove</button>
+            </div>
+          </div>
+
+          <!-- Processing Steps -->
+          <div id="processing-area" class="processing-area" style="display: none;">
+            <div class="processing-center">
+              <div class="processing-icon-wrapper">
+                <svg id="processing-icon" class="processing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <h3 id="processing-title" class="processing-title">Extracting Text</h3>
+              <p class="processing-subtitle">Please wait while we process your screenshot...</p>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="step-indicators">
+              <div class="step-item" data-step="0">
+                <div class="step-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <span class="step-label">Extracting Text</span>
+              </div>
+              <div class="step-item" data-step="1">
+                <div class="step-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                  </svg>
+                </div>
+                <span class="step-label">Analyzing Risk</span>
+              </div>
+              <div class="step-item" data-step="2">
+                <div class="step-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <span class="step-label">Generating Report</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analyze Button -->
+          <button id="analyze-btn" class="primary-btn full-width" style="display: none;" onclick="analyzeEmail()">
+            <span class="btn-content">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+              </svg>
+              Analyze Now
+            </span>
+          </button>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-box">
+          <h3 class="info-box-title">💡 How OCR Analysis Works</h3>
+          <p class="info-box-text">
+            Our advanced Optical Character Recognition (OCR) technology extracts text from your email screenshot. 
+            The AI then analyzes the content for phishing patterns, suspicious URLs, urgency tactics, and fraudulent keywords. 
+            You'll receive a detailed risk assessment within seconds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 3: Result -->
+  <div id="result-page" class="page">
+    <div class="page-container">
+      <!-- Animated Background Gradients -->
+      <div class="bg-gradients">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="content-wrapper result-content">
+        <!-- Header -->
+        <div class="page-header">
+          <button class="back-btn" onclick="navigateTo('upload')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Upload</span>
+          </button>
+
+          <div class="page-title-section">
+            <div class="page-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h1 class="page-title">Analysis Results</h1>
+          </div>
+          <p id="result-filename" class="page-subtitle"></p>
+        </div>
+
+        <!-- Risk Score Card -->
+        <div class="result-card glass-card">
+          <div class="score-container">
+            <!-- Circular Progress -->
+            <div class="progress-ring-wrapper">
+              <svg class="progress-ring" viewBox="0 0 256 256">
+                <circle class="progress-ring-bg" cx="128" cy="128" r="120" fill="none" stroke-width="14"></circle>
+                <circle id="progress-circle" class="progress-ring-progress" cx="128" cy="128" r="120" fill="none" stroke-width="14"></circle>
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4338CA" />
+                    <stop offset="50%" stop-color="#6D28D9" />
+                    <stop offset="100%" stop-color="#06B6D4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              
+              <!-- Score in Center -->
+              <div class="score-center">
+                <div id="risk-score" class="score-number">0%</div>
+                <div class="score-label">Risk Score</div>
+              </div>
+            </div>
+
+            <!-- Risk Level Badge -->
+            <div id="risk-badge" class="risk-badge">
+              <svg class="risk-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span class="risk-badge-label">Safe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extracted Content -->
+        <div class="result-card glass-card">
+          <div class="result-section-header">
+            <div class="result-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+            <h2 class="result-section-title">Extracted Email Content</h2>
+          </div>
+          <div class="extracted-text-box">
+            <pre id="extracted-text"></pre>
+          </div>
+        </div>
+
+        <!-- Risk Indicators -->
+        <div id="risk-indicators-card" class="result-card glass-card">
+          <h2 class="result-section-title">Detected Risk Indicators</h2>
+          <p class="result-section-desc">
+            Our AI identified the following suspicious keywords and patterns in the extracted email content:
+          </p>
+          <div id="keywords-container" class="keywords-container"></div>
+        </div>
+
+        <!-- Recommendations -->
+        <div id="recommendations-card" class="result-card glass-card">
+          <h2 class="result-section-title">Security Recommendation</h2>
+          <p id="recommendation-text" class="recommendation-text"></p>
+        </div>
+
+        <!-- Action Button -->
+        <button class="primary-btn full-width" onclick="navigateTo('upload')">
+          <span class="btn-content">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
+            </svg>
+            Scan Another Email
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
